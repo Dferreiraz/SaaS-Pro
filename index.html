@@ -751,6 +751,95 @@
 <!-- Toast Container -->
 <div class="toast-container" id="toast-container"></div>
 
+<!-- ═══════════════════════════════════════════
+     MODAL: Novo Agendamento
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-appt">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Novo Agendamento</h3>
+      <button class="modal-close">✕</button>
+    </div>
+    <div class="modal-form">
+      <div class="form-group"><label>Cliente</label><input id="appt-client" type="text" placeholder="Nome do cliente"></div>
+      <div class="form-group">
+        <label>Serviço</label>
+        <select id="appt-service" style="width:100%;padding:10px 14px;border:1.5px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font);color:var(--gray-900);background:var(--bg-card);outline:none;">
+          <option value="">Selecione um serviço</option>
+          <option>Consultoria de UX</option>
+          <option>Desenvolvimento API</option>
+          <option>SEO Mensal</option>
+          <option>Auditoria de Segurança</option>
+          <option>Integração LLM</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Data</label><input type="date"></div>
+        <div class="form-group"><label>Horário</label><input type="time" value="09:00"></div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" data-modal-close>Cancelar</button>
+      <button class="btn-primary" id="btn-save-appt">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: Serviço
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-service">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-svc-title">Adicionar Serviço</h3>
+      <button class="modal-close">✕</button>
+    </div>
+    <div class="modal-form" id="svc-form">
+      <div class="form-group"><label>Nome do Serviço</label><input id="svc-name" type="text" placeholder="Ex: Consultoria de UX"></div>
+      <div class="form-row">
+        <div class="form-group"><label>Categoria</label><input id="svc-cat" type="text" placeholder="Design, Dev, Mkt..."></div>
+        <div class="form-group"><label>Preço (R$)</label><input id="svc-price" type="number" placeholder="0,00"></div>
+      </div>
+      <div class="form-group"><label>Duração / Periodicidade</label><input id="svc-duration" type="text" placeholder="60 min, Mensal..."></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" data-modal-close>Cancelar</button>
+      <button class="btn-primary" id="btn-save-service">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MODAL: Transação
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-transacao">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Nova Transação</h3>
+      <button class="modal-close">✕</button>
+    </div>
+    <div class="modal-form">
+      <div class="form-group"><label>Cliente</label><input id="trans-cliente" type="text" placeholder="Nome do cliente ou empresa"></div>
+      <div class="form-row">
+        <div class="form-group"><label>Valor (R$)</label><input id="trans-valor" type="number" placeholder="0,00"></div>
+        <div class="form-group"><label>Data</label><input type="date"></div>
+      </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select style="width:100%;padding:10px 14px;border:1.5px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font);color:var(--gray-900);background:var(--bg-card);outline:none;">
+          <option>Concluído</option>
+          <option>Pendente</option>
+          <option>Cancelado</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" data-modal-close>Cancelar</button>
+      <button class="btn-primary" id="btn-save-transacao">Registrar</button>
+    </div>
+  </div>
+</div>
+
 <script src="src/js/main.js"></script>
 </body>
 </html>
