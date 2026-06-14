@@ -259,21 +259,21 @@ const ChartManager = (() => {
 })();
 
 // ── Calendario ────────────────────────────────────────────────────────────────
-
+ 
 const CalendarView = (() => {
   let view = 'semana';
-
+ 
   function setView(v) {
     view = v;
     document.querySelectorAll('.vsw').forEach(b => b.classList.toggle('active', b.dataset.view === v));
   }
-
+ 
   function init() {
     document.querySelectorAll('.vsw').forEach(btn => {
       btn.addEventListener('click', () => setView(btn.dataset.view));
     });
   }
-
+ 
   return { init };
 })();
 
@@ -404,6 +404,94 @@ const Services = (() => {
   return { init };
 })();
 
+// ── Settings ──────────────────────────────────────────────────────────────────
+
+const Settings = (() => {
+  function init() {
+    document.querySelectorAll('.snav-item').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.snav-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+
+    document.getElementById('settings-save')?.addEventListener('click', () => {
+      Toast.show('Alterações salvas com sucesso!', 'success');
+    });
+    document.getElementById('settings-cancel')?.addEventListener('click', () => {
+      Toast.show('Alterações canceladas.');
+    });
+  }
+  return { init };
+})();
+
+// ── New Appointment Modal ─────────────────────────────────────────────────────
+
+const Appointments = (() => {
+  function init() {
+    document.getElementById('btn-save-appt')?.addEventListener('click', () => {
+      const client  = document.getElementById('appt-client').value.trim();
+      const service = document.getElementById('appt-service').value;
+      if (!client || !service) { Toast.show('Preencha cliente e serviço.', 'error'); return; }
+      Modal.close('modal-appt');
+      Toast.show(`Agendamento criado para ${client}!`, 'success');
+    });
+  }
+  return { init };
+})();
+
+// ── Ganhos Actions ───────────────────────────────────────────────────────────
+
+const GanhosPage = (() => {
+  function init() {
+    document.getElementById('btn-add-transacao')?.addEventListener('click', () => {
+      Modal.open('modal-transacao');
+    });
+    document.getElementById('btn-save-transacao')?.addEventListener('click', () => {
+      const cliente = document.getElementById('trans-cliente').value.trim();
+      const valor   = document.getElementById('trans-valor').value;
+      if (!cliente || !valor) { Toast.show('Preencha todos os campos.', 'error'); return; }
+      Modal.close('modal-transacao');
+      Toast.show('Transação registrada!', 'success');
+    });
+  }
+  return { init };
+})();
+
+// ── Filter Tabs ──────────────────────────────────────────────────────────────
+
+function initFilterTabs() {
+  document.querySelectorAll('.filter-tabs').forEach(group => {
+    group.querySelectorAll('.ftab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        group.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  });
+}
+
+// ── FAB ─────────────────────────────────────────────────────────────────────
+
+function initFAB() {
+  document.getElementById('global-fab')?.addEventListener('click', () => {
+    Modal.open('modal-appt');
+  });
+}
+
+// ── Boot ─────────────────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', () => {
+  Router.init();
+  Modal.init();
+  Services.init();
+  Settings.init();
+  CalendarView.init();
+  Appointments.init();
+  GanhosPage.init();
+  initFilterTabs();
+  initFAB();
+});
 
 
 
