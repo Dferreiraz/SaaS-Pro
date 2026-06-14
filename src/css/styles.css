@@ -132,4 +132,13 @@
 .profile-name { font-size: 13px; font-weight: 600; color: var(--gray-800); }
 .profile-role { font-size: 11px; color: var(--gray-400); }
 
+/* =============================================
+   MAIN CONTENT
+   ============================================= */
 
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
