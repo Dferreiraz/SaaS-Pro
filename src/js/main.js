@@ -258,6 +258,25 @@ const ChartManager = (() => {
   return { renderForPage, renderDashboardChart, renderGanhosChart };
 })();
 
+// ── Calendario ────────────────────────────────────────────────────────────────
+
+const CalendarView = (() => {
+  let view = 'semana';
+
+  function setView(v) {
+    view = v;
+    document.querySelectorAll('.vsw').forEach(b => b.classList.toggle('active', b.dataset.view === v));
+  }
+
+  function init() {
+    document.querySelectorAll('.vsw').forEach(btn => {
+      btn.addEventListener('click', () => setView(btn.dataset.view));
+    });
+  }
+
+  return { init };
+})();
+
 // ── Services ──────────────────────────────────────────────────────────────────
 
 const Services = (() => {
@@ -384,3 +403,7 @@ const Services = (() => {
 
   return { init };
 })();
+
+
+
+
