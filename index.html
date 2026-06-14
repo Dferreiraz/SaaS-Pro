@@ -679,7 +679,77 @@
         </div>
       </div>
 
-      
+      <!-- ═══════════════════════════════════════════
+           PAGE: CONFIGURAÇÕES
+      ═══════════════════════════════════════════ -->
+      <div class="page" id="page-configuracoes">
+        <div class="settings-layout">
+          <nav class="settings-nav">
+            <div class="snav-item active">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+              Perfil
+            </div>
+            <div class="snav-item">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"/></svg>
+              Preferências
+            </div>
+            <div class="snav-item">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              Segurança
+            </div>
+          </nav>
+
+          <div class="settings-panel">
+            <h3>Informações Pessoais</h3>
+            <p>Atualize seus dados de contato e foto de perfil.</p>
+
+            <div class="profile-photo-row">
+              <div class="profile-photo">
+                RS
+                <div class="photo-edit">
+                  <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z"/></svg>
+                </div>
+              </div>
+              <button class="btn-change-photo">Trocar foto</button>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nome Completo</label>
+                <input type="text" value="Ricardo Silva">
+              </div>
+              <div class="form-group">
+                <label>Telefone</label>
+                <input type="tel" value="+55 (11) 98765-4321">
+              </div>
+            </div>
+            <div class="form-full">
+              <div class="form-group">
+                <label>Email Profissional</label>
+                <input type="email" value="ricardo.silva@saaspro.com">
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn-cancel" id="settings-cancel">Cancelar</button>
+              <button class="btn-primary" id="settings-save">Salvar Alterações</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /page-content -->
+  </main>
+
+</div><!-- /app-shell -->
+
+<!-- FAB (global) -->
+<button class="fab" id="global-fab" style="display:none;">
+  <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+</button>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toast-container"></div>
 
 <script src="src/js/main.js"></script>
 </body>
