@@ -555,7 +555,131 @@
         </button>
       </div>
 
- 
+      <!-- ═══════════════════════════════════════════
+           PAGE: RELATÓRIOS
+      ═══════════════════════════════════════════ -->
+      <div class="page" id="page-relatorios">
+        <div class="report-filter-bar">
+          <div class="filter-tabs">
+            <button class="ftab active">Hoje</button>
+            <button class="ftab">Semana</button>
+            <button class="ftab">Mês</button>
+            <button class="ftab">Personalizado</button>
+          </div>
+          <div class="search-bar">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="m21 21-4.35-4.35"/></svg>
+            <input type="text" placeholder="Buscar relatório...">
+          </div>
+          <div class="ml-auto" style="display:flex;gap:10px;">
+            <button class="btn-secondary">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              Exportar CSV
+            </button>
+            <button class="btn-primary">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+              Novo Relatório
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="stats-grid" style="margin-bottom:20px;">
+          <div class="stat-card">
+            <div class="stat-label">Receita Total</div>
+            <div class="stat-value" style="font-size:22px;color:var(--blue-600);">R$ 12.450,00</div>
+            <div class="delta-up" style="font-size:12px;margin-top:5px;">↑ +12% vs mês anterior</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Serviços Ativos</div>
+            <div class="stat-value">148</div>
+            <div style="font-size:12px;color:var(--gray-400);margin-top:5px;">⟳ 88% concluídos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Ticket Médio</div>
+            <div class="stat-value">R$ 84,12</div>
+            <div class="delta-down" style="font-size:12px;margin-top:5px;">↓ −2% oscilação</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Novos Clientes</div>
+            <div class="stat-value">32</div>
+            <div style="font-size:12px;color:var(--gray-400);margin-top:5px;">Meta trimestral (60%)</div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card">
+          <table>
+            <thead>
+              <tr><th>Data</th><th>Cliente</th><th>Serviço</th><th>Valor</th><th>Status</th><th>Ações</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>24 Out, 2023</td>
+                <td><div class="client-cell"><div class="client-av" style="background:#DBEAFE;color:#1D4ED8;font-size:10px;">AM</div><strong>Ana Martins</strong></div></td>
+                <td>Consultoria Digital</td><td><strong>R$ 1.200,00</strong></td>
+                <td><span class="badge success">Concluído</span></td>
+                <td><button class="btn-sm ghost">···</button></td>
+              </tr>
+              <tr>
+                <td>23 Out, 2023</td>
+                <td><div class="client-cell"><div class="client-av" style="background:#D1FAE5;color:#065F46;font-size:10px;">BR</div><strong>Bruno Rocha</strong></div></td>
+                <td>Manutenção Mensal</td><td><strong>R$ 450,00</strong></td>
+                <td><span class="badge warning">Pendente</span></td>
+                <td><button class="btn-sm ghost">···</button></td>
+              </tr>
+              <tr>
+                <td>22 Out, 2023</td>
+                <td><div class="client-cell"><div class="client-av" style="background:#FCE7F3;color:#9D174D;font-size:10px;">CL</div><strong>Carla Lima</strong></div></td>
+                <td>Design de Marca</td><td><strong>R$ 3.500,00</strong></td>
+                <td><span class="badge danger">Cancelado</span></td>
+                <td><button class="btn-sm ghost">···</button></td>
+              </tr>
+              <tr>
+                <td>21 Out, 2023</td>
+                <td><div class="client-cell"><div class="client-av" style="background:#EDE9FE;color:#5B21B6;font-size:10px;">TC</div><strong>Tech Corp</strong></div></td>
+                <td>Desenvolvimento Web</td><td><strong>R$ 8.900,00</strong></td>
+                <td><span class="badge success">Concluído</span></td>
+                <td><button class="btn-sm ghost">···</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="padding:14px 24px;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;">
+            <span style="color:var(--gray-400);font-size:13px;">Mostrando 1-10 de 148 registros</span>
+            <div class="page-nums">
+              <button class="pnum arrow"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg></button>
+              <button class="pnum active">1</button>
+              <button class="pnum">2</button>
+              <button class="pnum">3</button>
+              <button class="pnum arrow"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="report-bottom">
+          <div class="card chart-card">
+            <div class="chart-title" style="margin-bottom:4px;">Evolução de Receita</div>
+            <div class="chart-wrapper" style="height:180px;margin-top:12px;">
+              <canvas id="chart-report"></canvas>
+            </div>
+          </div>
+          <div class="export-cta">
+            <div>
+              <h3>Exportar Tudo</h3>
+              <p>Obtenha um relatório detalhado de todas as operações fiscais do trimestre.</p>
+            </div>
+            <div>
+              <button class="btn-export" onclick="Toast.show('Download iniciado!','success')">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Download PDF
+              </button>
+              <div class="last-backup">Último backup: 10 min atrás</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
 
 <script src="src/js/main.js"></script>
 </body>
