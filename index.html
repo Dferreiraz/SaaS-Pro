@@ -402,5 +402,48 @@
         </div>
       </div>
 
+      <!-- ═══════════════════════════════════════════
+           PAGE: SERVIÇOS
+      ═══════════════════════════════════════════ -->
+      <div class="page" id="page-servicos">
+        <div class="page-header">
+          <div class="page-header-text">
+            <h2>Catálogo de Serviços</h2>
+            <p>Gerencie os serviços oferecidos pela sua empresa e seus respectivos valores.</p>
+          </div>
+          <button class="btn-primary" id="btn-add-service">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+            Adicionar Serviço
+          </button>
+        </div>
+
+        <div class="services-stats">
+          <div class="service-stat"><label>Total de Serviços</label><div class="val dark" id="svc-total">12</div></div>
+          <div class="service-stat"><label>Preço Médio</label><div class="val" id="svc-avg">R$ 185,00</div></div>
+          <div class="service-stat"><label>Tempo Estimado</label><div class="val dark">45 min</div></div>
+          <div class="service-stat"><label>Ativos Hoje</label><div class="val dark" id="svc-ativos">8</div></div>
+        </div>
+
+        <div class="services-grid" id="services-grid">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="pagination">
+          <span>Mostrando 5 de 12 serviços cadastrados</span>
+          <div class="page-nums">
+            <button class="pnum arrow">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+            </button>
+            <button class="pnum active">1</button>
+            <button class="pnum">2</button>
+            <button class="pnum">3</button>
+            <button class="pnum arrow">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <script src="./src/js/main.js"></script>
 </body>
 </html>
