@@ -256,6 +256,151 @@
         </div>
       </div>
 
+      <!-- ═══════════════════════════════════════════
+           PAGE: CALENDÁRIO
+      ═══════════════════════════════════════════ -->
+      <div class="page" id="page-calendario">
+        <div class="cal-topbar">
+          <button class="cal-new-btn" onclick="Modal.open('modal-appt')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+            Novo Agendamento
+          </button>
+          <div class="cal-month-nav">
+            <button>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+            </button>
+            <span class="cal-month-label">Junho 2024</span>
+            <button>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+            </button>
+          </div>
+          <button class="btn-today">Hoje</button>
+          <div class="view-switcher">
+            <button class="vsw" data-view="dia">Dia</button>
+            <button class="vsw active" data-view="semana">Semana</button>
+            <button class="vsw" data-view="mes">Mês</button>
+          </div>
+        </div>
+
+        <div class="cal-layout">
+          <!-- Calendar Grid -->
+          <div class="cal-grid-wrapper">
+            <div class="cal-header-row">
+              <div></div>
+              <div class="cal-day-head"><span>SEG</span><span class="num">17</span></div>
+              <div class="cal-day-head"><span>TER</span><span class="num">18</span></div>
+              <div class="cal-day-head today"><span>QUA</span><span class="num">19</span></div>
+              <div class="cal-day-head"><span>QUI</span><span class="num">20</span></div>
+              <div class="cal-day-head"><span>SEX</span><span class="num">21</span></div>
+            </div>
+            <div class="cal-body" style="height: 468px; overflow-y:auto;">
+              <!-- Times -->
+              <div class="cal-times">
+                <div class="cal-time-slot"><span>08:00</span></div>
+                <div class="cal-time-slot"><span>09:00</span></div>
+                <div class="cal-time-slot"><span>10:00</span></div>
+                <div class="cal-time-slot"><span>11:00</span></div>
+                <div class="cal-time-slot"><span>12:00</span></div>
+                <div class="cal-time-slot"><span>13:00</span></div>
+                <div class="cal-time-slot"><span>14:00</span></div>
+                <div class="cal-time-slot"><span>15:00</span></div>
+                <div class="cal-time-slot"><span>16:00</span></div>
+              </div>
+              <!-- Day columns -->
+              <!-- SEG 17 -->
+              <div class="cal-col" style="position:relative;">
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-event blue" style="top:104px;height:78px;">
+                  <div class="ev-type">Meeting</div>
+                  <div class="ev-title">Revisão de Sprint</div>
+                  <div class="ev-time">10:00 – 11:30</div>
+                </div>
+              </div>
+              <!-- TER 18 -->
+              <div class="cal-col" style="position:relative;">
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-event green" style="top:208px;height:104px;">
+                  <div class="ev-type">Consultoria</div>
+                  <div class="ev-title">Cliente Alpha – Fase 2</div>
+                  <div class="ev-time">12:00 – 14:00</div>
+                </div>
+              </div>
+              <!-- QUA 19 (today) -->
+              <div class="cal-col" style="position:relative;background:rgba(59,124,246,.03);">
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-now-line" style="top:130px;">
+                  <span class="cal-now-label">14:15</span>
+                  <span class="cal-now-dot"></span>
+                </div>
+                <div class="cal-event blue" style="top:52px;height:52px;">
+                  <div class="ev-title">Check-in Equipe</div>
+                  <div class="ev-time">09:00 – 10:00</div>
+                </div>
+                <div class="cal-event gray" style="top:312px;height:130px;">
+                  <div class="ev-type">Deep Work</div>
+                  <div class="ev-title">Arquitetura de Banco</div>
+                  <div class="ev-time">14:00 – 16:30</div>
+                </div>
+              </div>
+              <!-- QUI 20 -->
+              <div class="cal-col">
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+              </div>
+              <!-- SEX 21 -->
+              <div class="cal-col" style="position:relative;border-right:none;">
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-slot"></div><div class="cal-slot"></div><div class="cal-slot"></div>
+                <div class="cal-event red" style="top:156px;height:52px;">
+                  <div class="ev-type">Urgente</div>
+                  <div class="ev-title">Deploy</div>
+                  <div class="ev-time">11:00 – 12:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="cal-sidebar-card">
+            <div class="day-summary">
+              <h3>Resumo do Dia</h3>
+              <div class="ds-item">
+                <div class="ds-line"></div>
+                <div><div class="ds-title">Arquitetura BD</div><div class="ds-sub">Agora • Sala 04</div></div>
+              </div>
+              <div class="ds-item">
+                <div class="ds-line gray"></div>
+                <div><div class="ds-title" style="color:var(--gray-400);">Daily Sync</div><div class="ds-sub">Concluído</div></div>
+              </div>
+            </div>
+            <div class="tasks-section">
+              <h4>Próximas Tarefas</h4>
+              <div class="task-item">
+                <div class="task-check">
+                  <svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                Enviar proposta Alpha
+              </div>
+              <div class="task-item">
+                <div class="task-check empty"></div>
+                Revisar log de erros
+              </div>
+              <div class="task-item">
+                <div class="task-check empty"></div>
+                Atualizar documentação API
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 </body>
 </html>
