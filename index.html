@@ -99,5 +99,163 @@
       </div>
     </header>
 
+    <!-- Page Content -->
+    <div class="page-content">
+
+      <!-- ═══════════════════════════════════════════
+           PAGE: DASHBOARD
+      ═══════════════════════════════════════════ -->
+      <div class="page active" id="page-dashboard">
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon blue">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </div>
+              <span class="stat-badge up">+12%</span>
+            </div>
+            <div class="stat-label">Agendamentos</div>
+            <div class="stat-value">42</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon green">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <span class="stat-badge today">Hoje</span>
+            </div>
+            <div class="stat-label">Serviços Realizados</div>
+            <div class="stat-value">128</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon red">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path stroke-linecap="round" d="M16 7V5a2 2 0 00-4 0v2"/></svg>
+              </div>
+              <span class="stat-badge down">−2.4%</span>
+            </div>
+            <div class="stat-label">Ganhos do Mês</div>
+            <div class="stat-value" style="font-size:22px;">R$ 14.250</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-header">
+              <div class="stat-icon purple">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+              </div>
+              <span class="stat-badge new">Novo</span>
+            </div>
+            <div class="stat-label">Clientes Atendidos</div>
+            <div class="stat-value">892</div>
+          </div>
+        </div>
+
+        <!-- Chart + Upcoming -->
+        <div class="two-col" style="margin-bottom:0;">
+          <div class="card chart-card">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title">Desempenho Mensal</div>
+                <div class="chart-sub">Comparativo de lucros e volume de serviços</div>
+              </div>
+              <span class="chart-year-badge">2024</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-desempenho"></canvas>
+            </div>
+          </div>
+
+          <div class="card upcoming-card">
+            <div class="upcoming-header">
+              <span class="upcoming-title">Próximos Compromissos</span>
+              <a class="view-all" data-nav="calendario">Ver Todos</a>
+            </div>
+            <div class="appt-list">
+              <div class="appt-item">
+                <div class="appt-time"><div class="appt-time-val">09:00</div><div class="appt-time-day">Hoje</div></div>
+                <div class="appt-dot"></div>
+                <div class="appt-info"><div class="appt-name">Beatriz Oliveira</div><div class="appt-service">Consultoria Estratégica</div></div>
+                <div class="appt-more">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zm0 4a2 2 0 110 4 2 2 0 010-4zm0 8a2 2 0 110 4 2 2 0 010-4z"/></svg>
+                </div>
+              </div>
+              <div class="appt-item">
+                <div class="appt-time"><div class="appt-time-val">10:30</div><div class="appt-time-day">Hoje</div></div>
+                <div class="appt-dot green"></div>
+                <div class="appt-info"><div class="appt-name">Carlos Eduardo</div><div class="appt-service">Análise de Dados</div></div>
+                <div class="appt-more">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zm0 4a2 2 0 110 4 2 2 0 010-4zm0 8a2 2 0 110 4 2 2 0 010-4z"/></svg>
+                </div>
+              </div>
+              <div class="appt-item">
+                <div class="appt-time"><div class="appt-time-val">14:00</div><div class="appt-time-day">Hoje</div></div>
+                <div class="appt-dot red"></div>
+                <div class="appt-info"><div class="appt-name">Dra. Mariana Luz</div><div class="appt-service">Revisão de Projeto</div></div>
+                <div class="appt-more">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zm0 4a2 2 0 110 4 2 2 0 010-4zm0 8a2 2 0 110 4 2 2 0 010-4z"/></svg>
+                </div>
+              </div>
+              <div class="appt-item">
+                <div class="appt-time"><div class="appt-time-val">16:15</div><div class="appt-time-day">Amanhã</div></div>
+                <div class="appt-dot"></div>
+                <div class="appt-info"><div class="appt-name">Fernando Torres</div><div class="appt-service">Design de Interface</div></div>
+                <div class="appt-more">
+                  <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zm0 4a2 2 0 110 4 2 2 0 010-4zm0 8a2 2 0 110 4 2 2 0 010-4z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity Table -->
+        <div class="card activity-card">
+          <div class="activity-header">
+            <span class="activity-title">Histórico de Atividades</span>
+            <button class="btn-filter">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12"/></svg>
+              Filtrar
+            </button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Cliente</th><th>Serviço</th><th>Status</th><th>Data</th><th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="client-cell"><div class="client-av">A</div>Alice Souza</div></td>
+                <td>Mentoria Financeira</td>
+                <td><span class="badge success">Concluído</span></td>
+                <td>12 Jun 2024</td>
+                <td><strong>R$ 450,00</strong></td>
+              </tr>
+              <tr>
+                <td><div class="client-cell"><div class="client-av" style="background:#FEF3C7;color:#D97706;">J</div>Jorge Mendes</div></td>
+                <td>Consultoria Fiscal</td>
+                <td><span class="badge warning">Em andamento</span></td>
+                <td>11 Jun 2024</td>
+                <td><strong>R$ 890,00</strong></td>
+              </tr>
+              <tr>
+                <td><div class="client-cell"><div class="client-av" style="background:#EDE9FE;color:#7C3AED;">M</div>Marina Costa</div></td>
+                <td>Design de Logo</td>
+                <td><span class="badge success">Concluído</span></td>
+                <td>10 Jun 2024</td>
+                <td><strong>R$ 1.200,00</strong></td>
+              </tr>
+              <tr>
+                <td><div class="client-cell"><div class="client-av" style="background:#FEE2E2;color:#DC2626;">P</div>Pedro Alves</div></td>
+                <td>Auditoria de Sistemas</td>
+                <td><span class="badge danger">Cancelado</span></td>
+                <td>09 Jun 2024</td>
+                <td><strong>R$ 3.400,00</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
 </body>
 </html>
