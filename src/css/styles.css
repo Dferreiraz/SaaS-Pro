@@ -1674,3 +1674,176 @@ tbody tr:hover {
 .btn-export:hover {
   opacity: .9;
 }
+
+/* =============================================
+   CONFIGURAÇÕES PAGE
+   ============================================= */
+
+.settings-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}
+
+.settings-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.snav-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gray-600, #4B5563);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.snav-item:hover {
+  background: var(--gray-100);
+}
+
+.snav-item.active {
+  background: var(--blue-50);
+  color: var(--blue-600);
+  font-weight: 600;
+}
+
+.settings-panel {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-panel h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+.settings-panel>p {
+  font-size: 13px;
+  color: var(--gray-400);
+  margin-bottom: 24px;
+}
+
+.profile-photo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.profile-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid var(--blue-200, #BFDBFE);
+  overflow: hidden;
+  background: var(--blue-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--blue-600);
+  position: relative;
+}
+
+.photo-edit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--blue-600);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-change-photo {
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--blue-600);
+  color: var(--blue-600);
+  background: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btn-change-photo:hover {
+  background: var(--blue-50);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-full {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 7px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: var(--font);
+  color: var(--gray-900);
+  background: var(--bg-card);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.form-group input:focus {
+  border-color: var(--blue-500);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn-cancel {
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: none;
+  color: var(--gray-600, #4B5563);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btn-cancel:hover {
+  background: var(--gray-100);
+}
