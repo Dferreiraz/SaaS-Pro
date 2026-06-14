@@ -417,3 +417,119 @@ tbody tr:hover { background: var(--gray-50); }
   transition: transform .18s, box-shadow .18s;
 }
 .fab:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(26,86,219,.50); }
+
+/* =============================================
+   CALENDAR PAGE
+   ============================================= */
+
+.cal-topbar {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;
+}
+.cal-month-nav { display: flex; align-items: center; gap: 6px; }
+.cal-month-nav button {
+  width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--gray-200);
+  background: var(--bg-card); color: var(--gray-600, #4B5563); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition);
+}
+.cal-month-nav button:hover { background: var(--gray-100); }
+.cal-month-label { font-size: 15px; font-weight: 700; color: var(--gray-900); min-width: 130px; text-align: center; }
+
+.view-switcher { display: flex; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); overflow: hidden; margin-left: auto; }
+.vsw {
+  padding: 6px 16px; font-size: 13px; font-weight: 500;
+  border: none; background: var(--bg-card); color: var(--gray-600, #4B5563);
+  cursor: pointer; transition: background var(--transition);
+}
+.vsw.active { background: var(--blue-100); color: var(--blue-600); font-weight: 600; }
+
+.btn-today {
+  padding: 7px 16px; border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-300); background: var(--bg-card);
+  font-size: 13px; font-weight: 600; color: var(--gray-700); cursor: pointer;
+  transition: background var(--transition);
+}
+.btn-today:hover { background: var(--gray-100); }
+
+.cal-new-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--blue-600); color: #fff;
+  padding: 8px 16px; border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600; border: none; cursor: pointer;
+  transition: background var(--transition);
+}
+.cal-new-btn:hover { background: #154FC0; }
+
+.cal-layout { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
+.cal-grid-wrapper {
+  background: var(--bg-card); border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200); overflow: hidden;
+}
+.cal-header-row {
+  display: grid; grid-template-columns: 64px repeat(5, 1fr);
+  border-bottom: 1px solid var(--gray-200);
+}
+.cal-day-head {
+  padding: 10px 8px; text-align: center;
+  font-size: 12px; font-weight: 700; color: var(--gray-500);
+  text-transform: uppercase; letter-spacing: .5px;
+}
+.cal-day-head .num { font-size: 18px; font-weight: 800; color: var(--gray-900); display: block; margin-top: 2px; }
+.cal-day-head.today .num { color: var(--blue-600); }
+
+.cal-body { display: grid; grid-template-columns: 64px repeat(5, 1fr); position: relative; }
+.cal-times { display: flex; flex-direction: column; }
+.cal-time-slot { height: 52px; display: flex; align-items: flex-start; padding: 4px 8px; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-100); }
+.cal-time-slot span { font-size: 11px; color: var(--gray-400); font-weight: 500; }
+
+.cal-col { position: relative; border-right: 1px solid var(--gray-200); }
+.cal-col:last-child { border-right: none; }
+.cal-slot { height: 52px; border-bottom: 1px solid var(--gray-100); }
+
+.cal-event {
+  position: absolute; left: 4px; right: 4px;
+  border-radius: 6px; padding: 5px 8px; font-size: 11px; font-weight: 600;
+  overflow: hidden; cursor: pointer; z-index: 2;
+  transition: filter var(--transition);
+}
+.cal-event:hover { filter: brightness(.95); }
+.cal-event .ev-title { font-weight: 700; margin-bottom: 1px; }
+.cal-event .ev-time { font-size: 10.5px; opacity: .8; }
+.cal-event .ev-type { font-size: 10px; opacity: .7; text-transform: uppercase; letter-spacing: .4px; }
+
+.cal-event.blue   { background: var(--blue-100); color: var(--blue-600); border-left: 3px solid var(--blue-600); }
+.cal-event.gray   { background: var(--gray-100); color: var(--gray-700); border-left: 3px solid var(--gray-400); }
+.cal-event.red    { background: var(--red-100);  color: var(--red-500);  border-left: 3px solid var(--red-500); }
+.cal-event.green  { background: var(--green-100); color: var(--green-500); border-left: 3px solid var(--green-500); }
+
+.cal-now-line {
+  position: absolute; left: 0; right: 0; height: 2px; background: var(--red-500); z-index: 3;
+}
+.cal-now-dot {
+  position: absolute; left: -5px; top: -4px;
+  width: 10px; height: 10px; border-radius: 50%; background: var(--red-500);
+}
+.cal-now-label {
+  position: absolute; left: -68px; top: -8px;
+  font-size: 11px; font-weight: 700; color: var(--red-500); background: var(--bg-main);
+  padding: 2px 4px; border-radius: 4px;
+}
+
+.cal-sidebar-card { background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--gray-200); overflow: hidden; }
+.day-summary { padding: 18px 16px; border-bottom: 1px solid var(--gray-200); }
+.day-summary h3 { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; }
+.ds-item { display: flex; gap: 10px; margin-bottom: 10px; }
+.ds-line { width: 3px; border-radius: 2px; background: var(--blue-600); }
+.ds-line.gray { background: var(--gray-300); }
+.ds-title { font-size: 13px; font-weight: 600; color: var(--gray-900); }
+.ds-sub { font-size: 11.5px; color: var(--gray-400); }
+
+.tasks-section { padding: 14px 16px; }
+.tasks-section h4 { font-size: 11px; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; }
+.task-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 13px; color: var(--gray-700); }
+.task-check { width: 16px; height: 16px; border-radius: 4px; border: 2px solid var(--blue-500); background: var(--blue-500); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.task-check.empty { background: none; border-color: var(--gray-300); }
+
+.cal-preview { margin-top: 12px; overflow: hidden; border-radius: var(--radius-sm); }
+.cal-preview img { width: 100%; height: 140px; object-fit: cover; opacity: .6; }
+
